@@ -1,0 +1,29 @@
+class Record < ActiveRecord::Base
+  attr_accessible :f0
+  attr_accessible :f1
+  attr_accessible :f2
+  attr_accessible :f3
+  attr_accessible :f4
+  attr_accessible :f5
+  attr_accessible :f6
+  attr_accessible :f7
+  attr_accessible :f8
+  attr_accessible :f9
+
+  attr_accessible :f10
+  attr_accessible :f11
+  attr_accessible :f12
+  attr_accessible :f13
+  attr_accessible :f14
+  attr_accessible :f15
+  attr_accessible :f16
+  attr_accessible :f17
+  attr_accessible :f18
+  attr_accessible :f19
+
+  attr_accessible :f20
+  attr_accessible :f21
+  attr_accessible :f22
+  attr_accessible :f23
+  attr_accessible :f24
+end

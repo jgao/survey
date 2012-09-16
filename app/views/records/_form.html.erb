@@ -1,0 +1,191 @@
+<style type="text/css">
+  body{
+    background-color: #F6F6F6;
+    color: #666;
+    font-size: 110%;
+  }
+  img{
+    height: 150px;
+    width: 150px;
+    border: 1px solid #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC;
+  }
+  div.field{
+    float: left;
+    margin: 10px 10px 10px 10px;
+  }
+  div.selections{
+    width: 870px;
+    height: 1000px;
+    margin: 0px auto;
+  }
+</style>
+
+<script type="text/javascript">
+function validate(){
+  var count = 0;
+
+  for(var i = 0;i < 25;i++){
+    var id = "record_f" + i;
+  
+    if(document.getElementById(id).checked) count++;
+  }
+
+  if(count === 10){
+    var f = document.getElementById("new_record").submit();
+  }
+
+  if(count != 10){
+    var s = document.getElementById("errorMessages");
+    s.innerHTML = "Please select 10 items. You currently have selected " + count + ".";
+  }
+}
+</script>
+
+<%= form_for(@record) do |f| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="selections">
+  <div class="field">
+    <%= f.label :Spagetti %>
+    <%= f.check_box :f0 %><br/>
+    <img src="http://www.yourpersonalgourmet.com/images/spagettiAndMeatballs.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Cereal %>
+    <%= f.check_box :f1 %><br/>
+    <img src="http://image.made-in-china.com/2f0j00dMAtYEzsgepQ/Breakfast-Cereal-Machine.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Steak %>
+    <%= f.check_box :f2 %><br/>
+    <img src="http://www.mccormick.com/~/media/Images/Recipes/Recipe%20Details/Main%20Dish/Montreal_Peppered_Steak.ashx?w=380" />
+  </div>
+  <div class="field">
+    <%= f.label :Shrimp %>
+    <%= f.check_box :f3 %><br/>
+    <img src="http://4.bp.blogspot.com/_s--n1TR94Vs/TTh1Pig-52I/AAAAAAAAQ9U/mOw8Qbq2nnI/s1600/shrimp-cocktail-500x500-kalynskitchen.jpg" />
+  </div>
+  <div class="field">
+    Instant Noodles
+    <%= f.check_box :f4 %><br/>
+    <img src="http://www.hatfindo.com/wp-content/uploads/2009/12/instant-noodle-cup.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Eggs %>
+    <%= f.check_box :f5 %><br/>
+    <img src="http://teriskitchen.com/foodpics/eggs/h-beggs.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Bacon %>
+    <%= f.check_box :f6 %><br />
+    <img src="http://ryanbumm.com/wp-content/uploads/2011/08/bacon1.jpg" />
+  </div>
+  <div class="field">
+    Ice Cream
+    <%= f.check_box :f7 %><br />
+    <img src="http://2.bp.blogspot.com/-LRyHygLWrw0/T1AklTqkznI/AAAAAAAAExs/Ehi5hKJemiQ/s1600/ICE+CREAM+CONES.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Salmon %>
+    <%= f.check_box :f8 %><br />
+    <img src="http://myghisite.com/wp-content/uploads/2012/09/SmokedSalmon.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Cake %>
+    <%= f.check_box :f9 %><br />
+    <img src="http://img4-3.myrecipes.timeinc.net/i/recipes/sl/06/01/chocolate-cake-sl-1110246-l.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Spinach %>
+    <%= f.check_box :f10 %><br />
+    <img src="http://lcdn.americastestkitchen.com/images/document/MA03_SpinachSalad_article.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Rice %>
+    <%= f.check_box :f11 %><br />
+    <img src="http://www.finecooking.com/CMS/uploadedImages/Images/Cooking/Articles/Tips-Techniques/fca31ki16-00.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Fries %>
+    <%= f.check_box :f12 %><br />
+    <img src="http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/04/fries2.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Sushi %>
+    <%= f.check_box :f13 %><br />
+    <img src="http://spiralsushiandgrill.com/wp-content/uploads/2012/03/sushi.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Hamburger %>
+    <%= f.check_box :f14 %><br />
+    <img src="http://0.tqn.com/d/australianfood/1/0/Z/3/-/-/Juicy-Hamburger-L.jpg" />
+  </div>
+  <div class="field">
+    Caesar Salad
+    <%= f.check_box :f15 %><br />
+    <img src="http://www.recipematcher.com/assets/photos/recipes/large/43144.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Carrots %>
+    <%= f.check_box :f16 %><br />
+    <img src="http://hostedmedia.reimanpub.com/TOH/Images/Photos/37/exps17330_TH10230C19A.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Milk %>
+    <%= f.check_box :f17 %><br />
+    <img src="http://2.bp.blogspot.com/_qJc6izAmZpg/S-2x-4MXdtI/AAAAAAAAAGA/k73ZV85SZuk/s1600/ist2_5842153-milk-bottle-and-glass.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Bananas %>
+    <%= f.check_box :f18 %><br />
+    <img src="http://images.meredith.com/fitness/images/2008/11/ss_100408149.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Broccoli %>
+    <%= f.check_box :f19 %><br />
+    <img src="http://www.worldhealth.net/images/homefeature/020211_broccoli.jpg" />
+  </div>
+  <div class="field">
+    Chicken Wings
+    <%= f.check_box :f20 %><br />
+    <img src="http://www.wildforwings.com/images/frozenwings/original/mm_hot_spicy.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Yogurt %>
+    <%= f.check_box :f21 %><br />
+    <img src="http://1.bp.blogspot.com/-7OdhKQ1Nfgg/UALtx-2smzI/AAAAAAAABkQ/8dMkCnsQ54k/s1600/yogurt.jpeg" />
+  </div>
+  <div class="field">
+    <%= f.label :Tomatoes %>
+    <%= f.check_box :f22 %><br />
+    <img src="http://topnews.in/health/files/tomatoes-1.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Pizza %>
+    <%= f.check_box :f23 %><br />
+    <img src="http://d2cxvvx9y2e2jk.cloudfront.net/RecipeImages/SpinachChickenSausagePizza_article.jpg" />
+  </div>
+  <div class="field">
+    <%= f.label :Apples %>
+    <%= f.check_box :f24 %><br />
+    <img src="http://4.bp.blogspot.com/-pu_FiLBiSBU/UEaf92AhM2I/AAAAAAAABns/MyQ5TBeZ0aY/s1600/apples-1024x1024.jpg" />
+  </div>
+  </div>
+  <div class="actions" align="center">
+    <span style="color:#FF0000" id="errorMessages"></span>
+    <br/><br/>
+    <input name="commit" type="button" onclick="validate()" value="Submit Survey">
+  </div>
+<% end %>
